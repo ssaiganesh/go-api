@@ -11,25 +11,25 @@ go run main.go
 
 Example of command to get response from API:
 
-####GET 
+#### GET 
 ```shell
 curl localhost:8080/books/2
 ```
 
-####POST
+#### POST
 ```shell
 curl localhost:8080/books --include --header "Content-Type:application/json" -d @body.json --request "POST"
 ```
 -d is for data. @ is for file. 
 
-####PATCH
+#### PATCH
 ```shell
 curl localhost:8080/checkout?id=2 --request "PATCH"
 ```
 
-###Difference between GetQuery and Param :
+### Difference between GetQuery and Param :
 
-####GetQuery
+#### GetQuery
 ```go
 id, ok := c.GetQuery("id")
 ```
@@ -37,7 +37,7 @@ sending request:
 ```shell
 curl localhost:8080/checkout?id=2 --request "PATCH"
 ```
-####Param
+#### Param
 ```go
 id := c.Param("id")
 ```
@@ -46,7 +46,7 @@ sending request:
 curl localhost:8080/books/2
 ```
 
-###Difference between Patch and Put :
+### Difference between Patch and Put :
 I had a question of why we weren't using Put instead of Patch method in the case of checkout or return book where we 
 update the quantity.
 
@@ -100,7 +100,7 @@ Default returns an Engine instance with the Logger and Recovery middleware alrea
 
 gin.H writes own custom json like the message param above. maps string type key to interface type value
 
-###Binding in gin
+### Binding in gin
 
 ```go
 func createBook(c *gin.Context) {
@@ -117,7 +117,7 @@ func createBook(c *gin.Context) {
 }
 ```
 
-####Type - Must bind
+#### Type - Must bind
 
 Methods - Bind, BindJSON, BindXML, BindQuery, BindYAML, BindHeader, BindTOML
 
